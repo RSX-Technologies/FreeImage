@@ -119,7 +119,7 @@ CT_ASSERT(sizeof(INTPTR_T) == sizeof(void*), strcodec2);
 #ifdef _BIG__ENDIAN_
 #define _byteswap_ulong(x)  (x)
 #else // _BIG__ENDIAN_
-U32 _byteswap_ulong(U32 bits)
+inline U32 _byteswap_ulong(U32 bits)
 {
     U32 r = (bits & 0xffu) << 24;
     r |= (bits << 8) & 0xff0000u;
